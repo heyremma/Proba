@@ -20,6 +20,8 @@ def set():
             print(dt)
             t=dt.timestamp()
             print(t)
+            text=sd.askstring("Текст напоминания","Введите текст напоминания")
+            label.config(text=f"Напоминание на {hour:02}:{minute:02} с текстом {text}")
         except Exception as e:
             mb.showerror("Ошибка!",f"Произошла ошибка {e}")
 
@@ -35,16 +37,17 @@ def check():
 
 def play_snd():
     pygame.mixer.init()#инициализируем миксер, который играет музыку
-    pygame.mixer.music.load("reminder.mp3)#загружаем музыку, файл должен быть в папке проекта (C:\Users\User\PycharmProjects\Project3)
-    pygame.mixer.music.play()#ghjbuhsdftv vepsre
-
+    pygame.mixer.music.load("rem.mp3")#загружаем музыку, файл должен быть в папке проекта (C:\Users\User\PycharmProjects\Project3)
+    pygame.mixer.music.play()#включаем музыку НЕ ХОЧЕТ РАБОТАТЬ!!!!
 
 
 window=Tk()
 window.title("Напоминание")
-l=Label(text="Установите напоминание")
-l.pack(pady=10)
+label=Label(text="Установите напоминание")
+label.pack(pady=10)
 set_button=Button(text="Установить напоминание", command=set)
 set_button.pack()
+
+check()
 
 window.mainloop()
