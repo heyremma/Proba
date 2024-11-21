@@ -33,6 +33,10 @@ def check():
     window.after(10000, check)#проверка раз в 10 секунд
 
 
+def play_snd():
+    pygame.mixer.init()#инициализируем миксер, который играет музыку
+    pygame.mixer.music.load("reminder.mp3)#загружаем музыку, файл должен быть в папке проекта (C:\Users\User\PycharmProjects\Project3)
+    pygame.mixer.music.play()#ghjbuhsdftv vepsre
 
 
 
